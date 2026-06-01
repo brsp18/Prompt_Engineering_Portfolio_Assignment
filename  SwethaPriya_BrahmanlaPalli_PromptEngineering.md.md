@@ -152,6 +152,44 @@ Conclusion: Medium temperature hit the sweet spot — informative enough to be u
 
 ## Part 3: Strategic Prompting Techniques
 ### 3.1 Chain-of-Thought Prompting
+### Selected Option B for Multi-Step Reasoning
+
+1. Prompt without Chain-of-Thought: A company has 150 employees. 60% work in engineering, 25% in sales, and the restin operations. The company plans to hire 20% more engineers and 10% moresalespeople. What is the total number of employees after hiring? Provide the
+final answer only, no working out.
+LLM output: Answer: 172 employees
+
+2.Prompt with Chain-of-Thought :A company has 150 employees. 60% work in engineering, 25% in sales, and the restin operations. The company plans to hire 20% more engineers and 10% more
+salespeople. What is the total number of employees after hiring? Provide step by step instructions to get the answer
+LLM output:
+Step-by-Step Solution:
+Step 1 — Find the number of employees in each department:
+Engineering: 60% × 150 = 90 engineers
+Sales: 25% × 150 = 37.5 → 38 salespeople
+Operations: 150 − 90 − 38 = 22 operations staff
+
+Step 2 — Calculate the new hires:
+New engineers: 20% × 90 = 18 new engineers
+New salespeople: 10% × 38 = 3.8 → 4 new salespeople
+
+Step 3 — Add new hires to the existing workforce:
+Total new hires: 18 + 4 = 22 new employees
+New total: 150 + 22 = 172 employees
+
+Step 4 — Final Answer:
+After hiring, the company will have 172 total employees.
+
+Reasoning:
+The problem requires three stages of thinking. First, break the 150 employees into their departments using the given percentages — engineering takes the largest share at 60%, sales takes 25%, and operations gets whatever is left. Second, apply the hiring increases only to the departments mentioned — engineering grows by 20% and sales by 10%, while operations stays untouched. Finally, add all new hires back to the original total. Rounding is applied wherever a decimal employee appears, since headcount must always be a whole number. The result is a net addition of 22 employees, bringing the company from 150 to 172 employees.
+
+3. Comparision:
+The three outputs differed significantly in depth and transparency.
+Without chain of thought, prompt returned just the final number with no working shown.
+However, with chain of thoughts, step-by-step prompt broke the solution into three individual steps. 
+
+Chain-of-thought prompting helps with complex reasoning because it forces the model to slow down and work through the problem logically rather than jumping to a final conclusion, which reduces errors. In Some calculations that involve percentage calculations and rounding the numbers, this step-by-step process will provide more accurate details rather than believing on one final number. 
+Limitation observed: Since 25% of 150 gives 37.5 salespeople and 10% of 38 gives 3.8 new hires, the model must make rounding decisions that aren't specified in the original problem, which means different rounding choices could produce a slightly different final answer, highlighting that chain-of-thought doesn't eliminate ambiguity — it just makes it visible.
+
+
 ### 3.2 Few-Shot Prompting
 
 ## Part 4: Responsible AI & Limitations
