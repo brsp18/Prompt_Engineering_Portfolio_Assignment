@@ -478,7 +478,7 @@ LLMs are useful tools but work best when used critically and alongside other rel
 - Avoid using AI to misrepresent or plagiarize others' work
 - Be mindful of privacy — avoid sharing sensitive personal information with LLMs Use AI to enhance your thinking, not replace it.
 
-Overall Takeaway:
+***Overall Takeaway:***
 LLMs are powerful tools when used responsibly — the key is knowing their limits and always applying your own critical thinking.
 
 
